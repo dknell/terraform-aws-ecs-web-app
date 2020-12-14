@@ -153,7 +153,9 @@ module "ecs_alb_service_task" {
 
 module "ecs_codepipeline" {
   enabled = var.codepipeline_enabled
-  source  = "git::https://github.com/cloudposse/terraform-aws-ecs-codepipeline.git?ref=tags/0.18.0"
+  # use this fork until they support terraform 0.14.x
+  source  = "github.com/dknell/terraform-aws-ecs-codepipeline"
+  # source  = "git::https://github.com/cloudposse/terraform-aws-ecs-codepipeline.git?ref=tags/0.18.0"
 
   region                = var.region
   github_oauth_token    = var.github_oauth_token
