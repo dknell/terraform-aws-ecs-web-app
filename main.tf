@@ -122,8 +122,8 @@ locals {
 
 module "ecs_alb_service_task" {
   # use this fork until they support terraform 0.14.x
-  source = "github.com/dknell/terraform-aws-ecs-alb-service-task"
-  # source = "git::https://github.com/cloudposse/terraform-aws-ecs-alb-service-task.git?ref=tags/0.42.0"
+  # source = "github.com/dknell/terraform-aws-ecs-alb-service-task"
+  source = "git::https://github.com/cloudposse/terraform-aws-ecs-alb-service-task.git?ref=tags/0.42.0"
 
   alb_security_group                = var.alb_security_group
   use_alb_security_group            = var.use_alb_security_group
@@ -156,8 +156,8 @@ module "ecs_alb_service_task" {
 module "ecs_codepipeline" {
   enabled = var.codepipeline_enabled
   # use this fork until they support terraform 0.14.x
-  source  = "github.com/dknell/terraform-aws-ecs-codepipeline"
-  # source  = "git::https://github.com/cloudposse/terraform-aws-ecs-codepipeline.git?ref=tags/0.18.0"
+  source = "github.com/dknell/terraform-aws-ecs-codepipeline"
+  # source = "git::https://github.com/cloudposse/terraform-aws-ecs-codepipeline.git?ref=tags/0.18.0"
 
   region                = var.region
   github_oauth_token    = var.github_oauth_token
@@ -200,9 +200,9 @@ module "ecs_codepipeline" {
 }
 
 module "ecs_cloudwatch_autoscaling" {
-  enabled               = var.autoscaling_enabled
+  enabled = var.autoscaling_enabled
   # use this fork until they support terraform 0.14.x
-  source                = "github.com/dknell/terraform-aws-ecs-cloudwatch-autoscaling"
+  source = "github.com/dknell/terraform-aws-ecs-cloudwatch-autoscaling"
   # source                = "git::https://github.com/cloudposse/terraform-aws-ecs-cloudwatch-autoscaling.git?ref=tags/0.4.2"
   name                  = var.name
   namespace             = var.namespace
